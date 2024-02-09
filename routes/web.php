@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $data = [
         'welcome' => 'Hello User!!',
+        'peoples' => ['Mario', 'Luigi', 'Giovanni', 'Paolo', 'Francesca', 'Laura', 'Giulia']
     ];
     return view('home', $data);
-});
+})->name('home');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/about_us', function () {
+    return view('about_us');
+})->name('about_us');
